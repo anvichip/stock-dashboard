@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Dashboard</title>
+    <title>Stock Prices</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -13,10 +13,12 @@
         <a href="/stock_prices">Stock Prices</a>
         <a href="/news">News</a>
     </nav>
-    <div>
-        <!-- Add your content here -->
-        <h1>Welcome to the Stock Dashboard Home Page</h1>
-        <img title="Center" src="{{ url_for('static', filename='b8fc1f6417548086b4b3229d1839f363.jpg') }}" align="center" />
+    <div class="prices-container">
+        <h2>Enter stock code for stock prices</h2>
+        <form action="/stock_prices" method="post">
+            <input type="text" name="stock_code" placeholder="Stock Code" required>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
     </div>
 </body>
 </html>

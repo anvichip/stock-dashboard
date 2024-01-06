@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/predictions">Predictions</a>
+        <a href="/stock_prices">Stock Prices</a>
+        <a href="/news">News</a>
+    </nav>
+    <div class="dashboard-container">
+        <h2>Stock Dashboard</h2>
+        <p>Stock Code: {{ stock_code }}</p>
+        <p>Result Code: {{ prediction_data }}</p>
+
+        <!-- Display graphs -->
+        <div class="graph-container">
+            <img src= "{{url_for('static', filename='vwap_graph.png')}}" title="VWAP">
+            <img src= "{{url_for('static', filename='rsi_graph.png')}}" title="RSI">
+            <img src= "{{url_for('static', filename='macd_graph.png')}}" title="MACD">
+            <img src= "{{url_for('static', filename='graph_supertrend.png')}}" title="Supertrend"> 
+        </div>
+        
+        <!-- Add other elements to display additional prediction data as needed -->
+    </div>
+</body>
+</html>

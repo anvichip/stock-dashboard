@@ -21,10 +21,10 @@ nav a {
     font-size: x-large;
 }
 
-.predictions-container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h2 {
@@ -47,4 +47,26 @@ input {
     font-size: large;
     border: none;
     cursor: pointer;
+}
+
+.graph-container img {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.data-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-container th, .data-container td {
+    border: 1px solid #3498db;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-container th {
+    background-color: #3498db;
+    color: #ffffff;
 }

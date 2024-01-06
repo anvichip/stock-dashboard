@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import pandas_ta as ta
 import matplotlib.pyplot as plt
 
 def generate_vwap_graph(dataframe):
@@ -20,14 +19,49 @@ def generate_vwap_graph(dataframe):
     plt.legend()
 
     # Save the graph
-    plt.savefig('vwap_graph.png')
+    plt.savefig('static/css/vwap_graph.png')
     plt.show()
 
 
 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def calculate_supertrend(df, period=7, multiplier=3):
+    hl2 = (df['High'] + df['Low']) / 2
+    atr = df['High'] - df['Low']
+    atr = atr.rolling(window=period).mean()
+
+    upper_band = hl2 + multiplier * atr
+    lower_band = hl2 - multiplier * atr
+
+    close = df['Close']
+    trend_up = [None] * len(df)
+    trend_down = [None] * len(df)
+
+    in_uptrend = True
+    for i in range(period, len(df)):
+        if in_uptrend:
+            if close[i] > lower_band[i - 1]:
+                trend_up[i] = lower_band[i]
+            else:
+                in_uptrend = False
+                trend_down[i] = upper_band[i]
+        else:
+            if close[i] < upper_band[i - 1]:
+                trend_down[i] = upper_band[i]
+            else:
+                in_uptrend = True
+                trend_up[i] = lower_band[i]
+
+    supertrend = pd.Series(trend_up, name='supertrend')
+    supertrend = supertrend.fillna(method='ffill')
+
+    return supertrend
+
 def generate_supertrend_graph(dataframe, period=7, multiplier=3):
     # Calculate Supertrend
-    dataframe['supertrend'] = ta.supertrend(dataframe['High'], dataframe['Low'], dataframe['Close'], length=period, multiplier=multiplier)
+    dataframe['supertrend'] = calculate_supertrend(dataframe, period=period, multiplier=multiplier)
 
     # Plot Supertrend
     plt.figure(figsize=(12, 6))
@@ -39,8 +73,12 @@ def generate_supertrend_graph(dataframe, period=7, multiplier=3):
     plt.legend()
 
     # Save the graph
-    plt.savefig('graph_supertrend.png')
+    plt.savefig('static/css/graph_supertrend.png')
     plt.show()
+
+# Example usage:
+# Assuming you have a DataFrame named 'df' with columns like 'Date', 'Open', 'High', 'Low', 'Close', 'Volume'
+# generate_supertrend_graph(df)
 
 
 import math
@@ -108,7 +146,7 @@ def generate_macd_graph(dataframe, short_window=12, long_window=26, signal_windo
     plt.legend()
 
     # Save the graph
-    plt.savefig('macd_graph.png')
+    plt.savefig('static\css\macd_graph.png')
     plt.show()
 
 # Example usage:
@@ -140,7 +178,7 @@ def generate_rsi_graph(dataframe, window=14):
     plt.legend()
 
     # Save the graph
-    plt.savefig('rsi_graph.png')
+    plt.savefig('static/css/rsi_graph.png')
     plt.show()
 
 # Example usage:
