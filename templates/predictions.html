@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Predictions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/predictions">Predictions</a>
+        <a href="/stock_prices">Stock Prices</a>
+        <a href="/news">News</a>
+    </nav>
+    <div class="predictions-container">
+        <h2>Enter stock code for analysis</h2>
+        <form action="#" method="post">
+            <input type="text" name="stock_code" placeholder="Stock Code" required>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

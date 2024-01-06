@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.predictions-container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h2 {
+    color: #3498db;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: large;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: large;
+    border: none;
+    cursor: pointer;
+}

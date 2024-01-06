@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/predictions">Predictions</a>
+        <a href="/stock_prices">Stock Prices</a>
+        <a href="/news">News</a>
+    </nav>
+    <div>
+        <!-- Add your content here -->
+        <h1>Welcome to the Stock Dashboard Home Page</h1>
+        <img title="Center" src="{{ url_for('static', filename='b8fc1f6417548086b4b3229d1839f363.jpg') }}" align="center" />
+    </div>
+</body>
+</html>
