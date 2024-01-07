@@ -20,7 +20,7 @@ This is a simple Flask web application for a stock dashboard. The application in
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/flask-stock-dashboard.git
+    git clone https://github.com/anvichip/stock-dashboard.git
     ```
 
 2. Navigate to the project directory:
