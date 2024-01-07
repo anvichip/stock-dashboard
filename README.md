@@ -88,6 +88,10 @@ The home page provides a welcoming message and acts as the starting point for th
 
 ### News
 
-(Provide a brief explanation of the functionality related to the "News" button if applicable.)
+1. **Latest Stock News:**
+   - Clicking the "News" button on the navigation bar takes users to the latest stock news page.
+
+2. **Generate Summary:**
+   - Users can click on a news article to generate a summary for that specific article.
 
 
