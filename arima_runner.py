@@ -1,6 +1,8 @@
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def arima_train_and_plot(data, col_name, Ntest, p, d, q):
