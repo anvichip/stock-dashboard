@@ -1,5 +1,6 @@
 from graphs import *
 
+
 def generate_stock_page(df):
     # generate_vwap_graph(df)
     # generate_macd_graph(df)
@@ -9,7 +10,6 @@ def generate_stock_page(df):
     result = get_prediction(df)
     return result
 
-    
+
 def get_prediction(df):
     return 0
-    
