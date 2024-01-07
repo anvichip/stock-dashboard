@@ -9,11 +9,21 @@ def home():
     return render_template('home.html')
 
 
+# Original code, not working
+# @app.route('/predictions', methods=['GET', 'POST'])
+# def predictions():
+#     if request.method == 'POST':
+#         stock_code = request.form['stock_code']
+#         prediction_data = generate_stock_page(stock_code)
+#         return render_template('stock_dashboard.html', stock_code=stock_code, prediction_data=prediction_data)
+#     return render_template('predictions.html')
+
 @app.route('/predictions', methods=['GET', 'POST'])
 def predictions():
     if request.method == 'POST':
         stock_code = request.form['stock_code']
-        prediction_data = generate_stock_page(stock_code)
+        stock_data = get_stocks(stock_code, 365)
+        prediction_data = generate_stock_page(stock_data)
         return render_template('stock_dashboard.html', stock_code=stock_code, prediction_data=prediction_data)
     return render_template('predictions.html')
 
