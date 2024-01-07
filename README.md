@@ -1,9 +1,4 @@
 # Stock Price Forecasting
-## Tech Stack: 
-yfinance, Flask, NLP, matplotlib, ARIMA, LSTM, transformers
-
-
-# Flask Stock Dashboard
 
 This is a simple Flask web application for a stock dashboard. The application includes pages for home, predictions, stock prices, and news. Users can input stock codes to get predictions and view stock prices.
 1. Developed a financial solution which uses LSTM+ARIMA to predict stock price, works for long and short term sight.
