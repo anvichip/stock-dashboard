@@ -9,15 +9,6 @@ def home():
     return render_template('home.html')
 
 
-# Original code, not working
-# @app.route('/predictions', methods=['GET', 'POST'])
-# def predictions():
-#     if request.method == 'POST':
-#         stock_code = request.form['stock_code']
-#         prediction_data = generate_stock_page(stock_code)
-#         return render_template('stock_dashboard.html', stock_code=stock_code, prediction_data=prediction_data)
-#     return render_template('predictions.html')
-
 @app.route('/predictions', methods=['GET', 'POST'])
 def predictions():
     if request.method == 'POST':
@@ -37,9 +28,23 @@ def stock_prices():
     return render_template('stock_prices.html')
 
 
-@app.route('/news')
-def news():
-    return render_template('news.html')
+@app.route('/stock_news', methods=['GET', 'POST'])
+def stock_news():
+    import requests
+    from bs4 import BeautifulSoup
+
+    url = 'https://www.cyberpunk.net'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # Example of a selector - adjust this to fit the page you're scraping
+    description_element = soup.find('p', class_='specific-class')
+
+    if description_element:
+        description = description_element.get_text()
+        print(description)
+    else:
+        print("Description not found")
 
 
 if __name__ == '__main__':
