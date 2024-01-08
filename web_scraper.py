@@ -13,7 +13,12 @@ def scrape_web_main(tickerMain: str) -> list:
 
     # Sending the requests over to the web pages
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'DNT': '1',  # Do Not Track Request Header
+        'Connection': 'close'
+    }
 
     def search_for_stock_news_urls(ticker):
         search_url = "https://www.google.com/search?q=yahoo+finance+{}&tbm=nws".format(
@@ -53,7 +58,7 @@ def scrape_web_main(tickerMain: str) -> list:
                   "Thank you for your patience. Our engineers are working quickly to resolve the issue.",
                   "thank you for your patience our engineers are working quickly to resolve the issue"]
             # no = "Thank you for your patience. Our engineers are working quickly to resolve the issue."
-            r = requests.get(url)
+            r = requests.get(url, headers=headers)
             soup = BeautifulSoup(r.text, 'html.parser')
             paragraphs = soup.find_all('p')
             text = [paragraph.text for paragraph in paragraphs]
