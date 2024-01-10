@@ -12,8 +12,6 @@ This is a simple Flask web application for a stock dashboard. The application in
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
 - [Functionalities](#functionalities)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
