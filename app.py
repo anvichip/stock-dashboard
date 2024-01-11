@@ -30,21 +30,8 @@ def stock_prices():
 
 @app.route('/stock_news', methods=['GET', 'POST'])
 def stock_news():
-    import requests
-    from bs4 import BeautifulSoup
 
-    url = 'https://www.cyberpunk.net'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
-
-    # Example of a selector - adjust this to fit the page you're scraping
-    description_element = soup.find('p', class_='specific-class')
-
-    if description_element:
-        description = description_element.get_text()
-        print(description)
-    else:
-        print("Description not found")
+    return render_template('stock_news.html')
 
 
 if __name__ == '__main__':
