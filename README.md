@@ -12,8 +12,6 @@ This is a simple Flask web application for a stock dashboard. The application in
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
 - [Functionalities](#functionalities)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -26,7 +24,7 @@ This is a simple Flask web application for a stock dashboard. The application in
 2. Navigate to the project directory:
 
     ```bash
-    cd flask-stock-dashboard
+    cd stock-dashboard
     ```
 
 3. Install dependencies:
